@@ -1,0 +1,307 @@
+/* src/components/layout/Sidebar.css */
+
+/* --- الأنماط الأساسية للشريط الجانبي (الشاشات الكبيرة) --- */
+.unified-sidebar {
+    background-color: #212529;
+    /* لون الخلفية الرئيسي */
+    color: #adb5bd;
+    /* لون النص الافتراضي */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* ارتفاع كامل */
+    position: sticky;
+    /* أو fixed إذا كنت تفضل ثباته تمامًا */
+    top: 0;
+    width: 260px;
+    /* العرض الافتراضي */
+    min-width: 260px;
+    transition: width 0.2s ease-out;
+    /* انتقال سلس للعرض */
+    z-index: 1030;
+    /* ليكون فوق العناصر الأخرى */
+    overflow-y: auto;
+    /* تمرير رأسي عند الحاجة */
+    overflow-x: hidden;
+    /* منع التمرير الأفقي */
+}
+
+/* --- تنسيق منطقة الرأس (الشعار والبحث) --- */
+.sidebar-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    /* جعل الشعار والبحث في صف */
+    align-items: center;
+}
+
+.sidebar-logo-link {
+    flex-shrink: 0;
+    /* منع الشعار من التقلص */
+    margin-right: 0.75rem;
+}
+
+.sidebar-logo {
+    display: block;
+    /* لإزالة المسافات الزائدة */
+    height: 35px;
+    /* تحديد ارتفاع الشعار */
+    width: auto;
+    transition: height 0.2s ease-out;
+}
+
+.sidebar-search-container {
+    flex-grow: 1;
+    /* جعل حاوية البحث تأخذ المساحة المتبقية */
+}
+
+.sidebar-search-form {
+    width: 100%;
+}
+
+.search-input {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #f8f9fa !important;
+    font-size: 0.85rem;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2) !important;
+}
+
+/* --- تنسيق منطقة الروابط --- */
+.sidebar-nav {
+    flex-grow: 1;
+    /* تأخذ المساحة الرأسية المتبقية */
+    padding: 0.75rem 1rem;
+    /* Padding داخلي */
+    overflow-y: auto;
+    /* تمرير عند الحاجة */
+}
+
+.sidebar-link {
+    display: flex !important;
+    align-items: center;
+    padding: 0.7rem 1rem !important;
+    /* تعديل Padding */
+    margin-bottom: 0.3rem;
+    /* تقليل المسافة بين الروابط */
+    border-radius: 0.375rem;
+    /* التقويس الافتراضي لـ Bootstrap */
+    color: #ced4da !important;
+    /* لون أفتح قليلاً للنص */
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff !important;
+}
+
+.sidebar-link.active {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    /* تمييز بسيط للنشط */
+}
+
+.sidebar-link .icon {
+    font-size: 1.1rem;
+    margin-right: 0.85rem;
+    /* مسافة بين الأيقونة والنص */
+    min-width: 20px;
+    /* عرض أدنى للأيقونة */
+    text-align: center;
+    /* توسيط الأيقونة */
+    flex-shrink: 0;
+}
+
+.sidebar-link .link-text {
+    transition: opacity 0.2s ease-out;
+}
+
+/* --- تنسيق الفوتر (زر الخروج) --- */
+.sidebar-footer {
+    margin-top: auto;
+    /* دفعه للأسفل */
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #adb5bd !important;
+    /* لون الخروج الافتراضي */
+}
+
+.logout-button:hover {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    /* خلفية حمراء خفيفة */
+    color: #f5c6cb !important;
+    /* نص أحمر فاتح */
+}
+
+
+/* === التجاوب === */
+
+/* --- شاشات متوسطة (وضع الأيقونات فقط) --- */
+@media (max-width: 991.98px) {
+    .unified-sidebar {
+        width: 75px;
+        min-width: 75px;
+    }
+
+    .sidebar-header {
+        padding: 0.75rem;
+        justify-content: center;
+    }
+
+    .sidebar-logo-link {
+        margin: 0;
+    }
+
+    .sidebar-logo {
+        height: 30px;
+    }
+
+    .sidebar-search-container {
+        display: none;
+    }
+
+    /* إخفاء البحث */
+    .sidebar-link {
+        justify-content: center;
+        padding: 0.8rem 0.5rem !important;
+    }
+
+    .sidebar-link .icon {
+        margin-right: 0 !important;
+        font-size: 1.2rem;
+    }
+
+    .sidebar-link .link-text {
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    .sidebar-footer {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .logout-button {
+        justify-content: center;
+    }
+
+    .logout-button .link-text {
+        display: none;
+    }
+}
+
+/* --- شاشات صغيرة (شريط علوي أفقي) --- */
+@media (max-width: 767.98px) {
+    .unified-sidebar {
+        width: 100%;
+        height: 56px;
+        min-height: 56px;
+        /* ارتفاع ثابت */
+        flex-direction: row !important;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        /* أو fixed */
+        padding: 0 0.75rem;
+        /* padding أفقي */
+        overflow: hidden;
+        /* منع أي overflow */
+    }
+
+    .sidebar-header {
+        padding: 0;
+        border: none;
+        margin-right: auto;
+    }
+
+    /* الشعار على اليسار */
+    .sidebar-logo {
+        height: 30px;
+    }
+
+    .sidebar-search-container {
+        display: none !important;
+    }
+
+    /* تأكيد إخفاء البحث */
+    .sidebar-footer {
+        display: none !important;
+    }
+
+    /* تأكيد إخفاء الفوتر */
+
+    /* منطقة الروابط تأخذ المساحة المتبقية وتتوسط */
+    .sidebar-nav {
+        flex-grow: 1;
+        padding: 0 0.5rem !important;
+        margin: 0 !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        /* تمرير أفقي عند الحاجة */
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        /* محاذاة رأسية */
+        justify-content: flex-end;
+        /* الروابط تبدأ من اليمين */
+        height: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* تنسيق الروابط في الشريط العلوي */
+    .sidebar-link {
+        padding: 0 0.6rem !important;
+        /* padding أقل */
+        margin-bottom: 0;
+        border-radius: 4px;
+        flex-shrink: 0;
+        height: calc(100% - 10px);
+        /* ارتفاع أقل قليلاً مع هامش */
+        margin: 5px auto;
+        /* هامش بسيط بين الروابط */
+        border-bottom: none;
+        /* لا خط سفلي */
+    }
+
+    .sidebar-link .icon {
+        font-size: 1.1rem;
+        margin-right: 0.3rem;
+    }
+
+    /* أيقونة أصغر ومسافة أقل */
+    .sidebar-link .link-text {
+        font-size: 0.8rem;
+    }
+
+    /* خط أصغر */
+    .sidebar-link.active {
+        border-bottom: none;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* خلفية خفيفة للنشط */
+}

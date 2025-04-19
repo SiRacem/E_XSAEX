@@ -1,0 +1,209 @@
+/* src/pages/UserProfilePage.css */
+.user-profile-page {
+    background-color: #f4f7f6;
+    /* Light gray background */
+    min-height: calc(100vh - 56px);
+    /* Adjust based on your header height */
+    padding-top: 2rem;
+    /* Add some top padding */
+    padding-bottom: 3rem;
+    /* Add bottom padding */
+}
+
+.profile-card-main {
+    border: none;
+    border-radius: 0.75rem;
+    /* Consistent rounding */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    /* Subtle shadow */
+}
+
+.profile-header {
+    border-bottom: 1px solid #e0e0e0;
+    /* Slightly darker border */
+    position: relative;
+    /* For potential background elements */
+    /* background-color: #ffffff; /* White header background */
+}
+
+.profile-avatar {
+    width: 100px;
+    /* Adjust size */
+    height: 100px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    background-color: #adb5bd;
+}
+
+.profile-name {
+    font-weight: 700;
+    color: #343a40;
+    font-size: 1.8rem;
+    /* Larger name */
+}
+
+.profile-role {
+    font-size: 0.8rem;
+    padding: 0.35em 0.9em;
+    font-weight: 500;
+    vertical-align: middle;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    /* Example: Light blue background */
+    color: #0d6efd !important;
+    /* Example: Blue text */
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.profile-location,
+.profile-member-since {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.profile-location svg,
+.profile-member-since svg {
+    vertical-align: -2px;
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+.section-sub-title {
+    color: #495057;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem !important;
+    /* Increased spacing */
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #eee;
+    /* Lighter border */
+}
+
+/* Stats List Styles */
+.stats-list .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.75rem 0;
+    /* Adjusted padding */
+    font-size: 0.95rem;
+    color: #495057;
+    /* Slightly darker text */
+    border-bottom: 1px dashed #eee;
+    /* Dashed separator */
+}
+
+.stats-list .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.stats-list .icon {
+    width: 22px;
+    /* Consistent icon width */
+    text-align: center;
+    opacity: 0.7;
+    margin-right: 0.8rem !important;
+    /* More space after icon */
+}
+
+.stats-list .stat-badge {
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #e9ecef !important;
+    /* Light gray badge */
+    color: #343a40 !important;
+    /* Darker text */
+    padding: 0.3em 0.6em;
+}
+
+/* Rating Box Styles */
+.rating-box {
+    /* background-color: #f8f9fa; */
+    /* Kept bg-light class */
+    border-color: #e9ecef !important;
+}
+
+.rating-percentage {
+    margin-bottom: 0.25rem !important;
+    line-height: 1;
+}
+
+.rating-text {
+    font-size: 0.75rem;
+    /* Smaller text */
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    /* More spacing */
+    margin-bottom: 0.75rem !important;
+}
+
+.rating-count {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.rating-count.positive {
+    color: #198754;
+}
+
+.rating-count.negative {
+    color: #dc3545;
+}
+
+.rating-count svg {
+    margin-right: 5px;
+}
+
+/* Loading Placeholder */
+.loading-placeholder {
+    min-height: 60vh;
+    /* Give loading state some height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .profile-header {
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0.75rem;
+    }
+
+    .profile-header .justify-content-between {
+        justify-content: center !important;
+        flex-direction: column;
+    }
+
+    .profile-name {
+        margin-bottom: 0.5rem !important;
+        font-size: 1.6rem;
+    }
+
+    .user-profile-page .section-sub-title {
+        text-align: center;
+    }
+
+    /* Center titles on mobile */
+    .stats-list .list-group-item,
+    .rating-box {
+        text-align: center;
+        justify-content: center !important;
+    }
+
+    /* Center stat/rating items */
+    .stats-list .icon {
+        margin-right: 0.5rem !important;
+    }
+
+    .stats-list span:first-child {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    /* Align label left */
+}

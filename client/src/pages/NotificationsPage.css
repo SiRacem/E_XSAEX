@@ -1,0 +1,58 @@
+/* src/pages/NotificationsPage.css */
+.notifications-page .page-title {
+    color: #343a40;
+}
+
+.notification-list .list-group-item {
+    border-left: 4px solid transparent;
+    /* لإضافة تمييز للحالة */
+    transition: background-color 0.15s ease-in-out, border-left-color 0.15s ease-in-out;
+}
+
+.notification-list .list-group-item.unread-item {
+    background-color: #f8f9fa;
+    /* خلفية خفيفة جدًا */
+    border-left-color: var(--bs-primary);
+    /* خط أزرق لغير المقروء */
+}
+
+.notification-list .list-group-item.unread-item:hover {
+    background-color: #eef3f8;
+    /* لون أغمق قليلاً عند المرور */
+}
+
+.notification-list .list-group-item:not(.unread-item) {
+    border-left-color: #dee2e6;
+    /* خط رمادي للمقروء */
+}
+
+.notification-list .list-group-item:not(.unread-item):hover {
+    background-color: #f1f3f5;
+}
+
+.notification-list-item .icon-area {
+    padding-top: 2px;
+    /* محاذاة رأسية أفضل للأيقونة */
+}
+
+.notification-list-item .notification-title {
+    color: #212529;
+}
+
+.notification-list-item.unread-item .notification-title {
+    color: #0d6efd;
+    /* لون العنوان غير المقروء */
+}
+
+.notification-list-item .notification-message {
+    color: #495057;
+}
+
+.notification-list-item:not(.unread-item) .notification-message {
+    color: #6c757d;
+    /* رسالة باهتة للمقروء */
+}
+
+.notification-list-item .notification-date {
+    font-size: 0.75rem;
+}

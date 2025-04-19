@@ -1,0 +1,215 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  /* لون خلفية عام أفتح قليلاً */
+}
+
+/* --- حاوية التطبيق الرئيسية --- */
+.app-container {
+  /* لا يوجد flex هنا، يتم إضافته عبر media query */
+}
+
+/* --- منطقة المحتوى الرئيسي --- */
+.main-content-area {
+  width: 100%;
+  /* يأخذ العرض الكامل افتراضيًا */
+  min-height: 100vh;
+  background-color: #ececec;
+  transition: margin-left 0.3s ease, padding-top 0.3s ease;
+  /* إضافة انتقال لـ padding-top */
+  padding: 1.5rem;
+  /* Padding افتراضي */
+}
+
+/* --- أنماط للشاشات الكبيرة والمتوسطة (عندما يكون الشريط الجانبي مرئيًا) --- */
+@media (min-width: 769px) {
+  .app-container.layout-authenticated {
+    display: flex;
+    /* تطبيق flex لعرض الشريط الجانبي والمحتوى */
+  }
+
+  /* لا حاجة لـ margin-left إذا كان Sidebar يستخدم sticky/fixed */
+  /* .main-content-area.content-authenticated { margin-left: 260px; } */
+  /* للشريط الكامل */
+}
+
+/* @media (min-width: 769px) and (max-width: 992px) {
+    .main-content-area.content-authenticated { margin-left: 80px; }
+} */
+
+/* --- أنماط للشاشات الصغيرة (عندما يكون الشريط العلوي مرئيًا) --- */
+/* @media (max-width: 768px) {
+  .main-content-area.content-authenticated {
+    padding-top: calc(60px + 1.5rem);
+  }
+} */
+
+/* إزالة padding الافتراضي لـ body إذا كان يسبب مشاكل */
+body {
+  padding: 0;
+}
+
+/* يمكنك إضافة أنماط عامة أخرى هنا */
+
+
+/* Login.css أو App.css */
+.login-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* خلفية متدرجة خفيفة */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.login-card {
+  border: none;
+  /* إزالة حدود البطاقة */
+  border-radius: 15px;
+  /* تقويس أكبر */
+  background-color: rgba(255, 255, 255, 0.95);
+  /* خلفية شبه شفافة قليلاً */
+  backdrop-filter: blur(5px);
+  /* تأثير ضبابي للخلفية (قد لا يعمل في كل المتصفحات) */
+}
+
+.login-card .form-control {
+  border-radius: 8px;
+  /* تقويس حقول الإدخال */
+  padding: 0.75rem 1rem;
+  /* زيادة padding */
+}
+
+.login-card .btn-primary {
+  padding: 0.75rem;
+  /* padding أكبر للزر */
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.auth-switch-link {
+  font-size: 0.9rem;
+  color: #6c757d;
+  /* لون رمادي للنص */
+}
+
+.auth-switch-link a {
+  text-decoration: none;
+  color: #0d6efd;
+  /* لون Bootstrap الأساسي */
+}
+
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* تغيير شكل حقول الإدخال عند الخطأ */
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  border-color: #dc3545;
+  /* لون خطأ Bootstrap */
+  padding-right: calc(1.5em + .75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(.375em + .1875rem) center;
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Register.css أو App.css */
+.register-container {
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+  /* خلفية متدرجة خضراء فاتحة */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.register-card {
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.98);
+  /* أكثر وضوحًا من تسجيل الدخول */
+}
+
+.register-card .form-control,
+.register-card .form-select {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  /* تقليل المسافة بين الحقل والعنوان */
+}
+
+.register-card .form-label {
+  margin-bottom: 0.25rem;
+  /* تقليل المسافة بين العنوان والحقل */
+  font-weight: 500;
+  font-size: 0.9rem;
+  /* تصغير حجم الخط قليلاً */
+}
+
+.register-card .btn-primary {
+  padding: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.auth-switch-link {
+  /* نفس تنسيق صفحة تسجيل الدخول */
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.auth-switch-link a {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* أنماط لعرض الأخطاء تحت الحقول (إذا استخدمت isInvalid و Feedback) */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + .75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(.375em + .1875rem) center;
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+  display: block;
+  /* تأكد من ظهور رسالة الخطأ */
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+@media (max-width: 767.98px) {
+  .app-container.layout-authenticated {
+    display: block;
+    /* Override d-flex */
+  }
+
+  .main-content-area.content-authenticated {
+    margin-left: 0;
+  }
+}

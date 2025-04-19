@@ -1,0 +1,89 @@
+/* Styles for the overall layout */
+.main-layout-container {
+    min-height: 100vh;
+    background-color: #ececec;
+}
+
+/* --- Header Styles --- */
+.main-header {
+    background-color: #ffffff;
+    z-index: 1010;
+    /* يجب أن يكون أعلى من المحتوى ولكن أقل من السايدبار إذا كان overlay */
+    padding: 0.5rem 0;
+    /* تقليل الـ padding */
+}
+
+.header-logo img {
+    max-height: 40px;
+    /* تحديد أقصى ارتفاع للشعار في الهيدر */
+    width: auto;
+}
+
+.header-search {
+    max-width: 400px;
+    /* تحديد عرض حقل البحث */
+    width: 100%;
+    /* السماح له بالتقلص */
+}
+
+/* --- End Header Styles --- */
+
+
+/* --- Wrapper for Content Area --- */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* جعل الغلاف يأخذ الارتفاع الكامل */
+    overflow: hidden;
+    /* منع الغلاف من التمرير */
+}
+
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1;
+    /* جعل المحتوى يملأ المساحة المتبقية */
+    padding: 1.5rem;
+    overflow-y: auto;
+    /* السماح للمحتوى فقط بالتمرير */
+    padding-bottom: 80px;
+    /* لتجنب الشريط السفلي للموبايل */
+    /* Add top padding to avoid content hiding under sticky header */
+    padding-top: calc(1.5rem + 60px);
+    /* قيمة padding الأصلية + ارتفاع الهيدر التقريبي */
+}
+
+
+/* Adjustments for when sidebar is collapsed */
+@media (max-width: 992px) and (min-width: 769px) {
+    .content-wrapper {
+        /* لا تغييرات كبيرة هنا عادةً إذا كان السايدبار fixed/sticky */
+    }
+
+    .header-search {
+        max-width: 300px;
+    }
+}
+
+/* Adjustments for mobile bottom navigation */
+@media (max-width: 768px) {
+    .main-layout-container {
+        display: block;
+    }
+
+    .content-wrapper {
+        height: auto;
+        overflow: visible;
+    }
+
+    .main-content {
+        padding-top: calc(1.5rem + 50px);
+        padding-bottom: 70px;
+        overflow-y: visible;
+    }
+
+    .header-search {
+        max-width: 200px;
+    }
+}

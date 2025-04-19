@@ -1,0 +1,250 @@
+/* src/pages/Comptes.css */
+.comptes-page .page-title {
+    color: #343a40;
+}
+
+.add-account-btn {
+    font-weight: 500;
+}
+
+.add-form-card {
+    background-color: #ffffff;
+}
+
+/* Section Titles */
+.account-section .section-title {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.375rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.pending-title {
+    background-color: #fd7e14;
+    border-left: 5px solid #d16a0f;
+    color: white;
+}
+
+.approved-title {
+    background-color: #198754;
+    border-left: 5px solid #146c43;
+}
+
+.rejected-title {
+    background-color: #dc3545;
+    border-left: 5px solid #b02a37;
+}
+
+/* Status Icons/Borders */
+.text-warning {
+    color: #fd7e14 !important;
+}
+
+/* Override bootstrap warning if needed */
+.status-pending {
+    border-top: 3px solid #fd7e14;
+}
+
+.status-approved {
+    border-top: 3px solid #198754;
+}
+
+.status-rejected {
+    border-top: 3px solid #dc3545;
+}
+
+/* Account Card Styles */
+.account-card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+.action-btn {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Carousel Styles inside Card */
+.account-card-carousel .carousel-inner {
+    border-radius: 0;
+}
+
+.account-card-carousel .carousel-control-prev-icon,
+.account-card-carousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-size: 60%;
+}
+
+.account-card-carousel .carousel-indicators [data-bs-target] {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.account-card-carousel .carousel-indicators .active {
+    background-color: #000;
+}
+
+/* --- Image Preview Container (Large Previews) --- */
+.image-preview-container.large-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* Increased gap */
+    background-color: #f8f9fa;
+    /* Light background for the area */
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    min-height: 140px;
+    /* Minimum height */
+}
+
+.preview-item {
+    position: relative;
+    /* --- Correction: Use max-width/max-height or aspect-ratio for better control --- */
+    width: 120px;
+    /* Target width */
+    height: 120px;
+    /* Target height */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    overflow: hidden;
+    /* Hide parts of image if needed with object-fit */
+    border-radius: 8px;
+    /* Apply border-radius here */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add shadow */
+}
+
+.preview-image-lg {
+    display: block;
+    /* Important */
+    width: 100%;
+    /* Fill the container */
+    height: 100%;
+    /* Fill the container */
+    object-fit: cover;
+    /* Cover the area without distortion */
+    /* border-radius applied to parent (.preview-item) */
+    /* border removed, applied to parent */
+}
+
+.remove-preview-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    z-index: 10;
+    /* Ensure button is clickable */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* Add shadow to button */
+}
+
+.remove-preview-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.existing-badge {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    z-index: 5;
+}
+
+/* Alert styling inside modal/form */
+.add-form-card .alert,
+.modal-body .alert {
+    margin-bottom: 1rem;
+}
+
+.image-preview-container.large-preview {
+    /* ... (الأنماط السابقة: display, gap, background, padding, etc.) ... */
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    background-color: #f8f9fa; padding: 1rem; border-radius: 0.375rem;
+    border: 1px solid #dee2e6; min-height: 140px;
+}
+
+.preview-item {
+    position: relative; width: 120px; height: 120px; flex-shrink: 0;
+    overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer; /* جعل العنصر كله قابل للنقر للمعاينه */
+}
+/* تغميق الصورة قليلاً لإظهار الأيقونات بشكل أفضل */
+.preview-item img { filter: brightness(95%); transition: filter 0.2s ease;}
+.preview-item:hover img { filter: brightness(75%); }
+
+
+.preview-image-lg {
+    display: block; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* --- أزرار التحكم في المعاينة (العين والحذف) --- */
+.preview-item .btn { /* نمط عام للأزرار */
+    position: absolute;
+    border-radius: 50%; width: 30px; height: 30px; display: flex;
+    align-items: center; justify-content: center; padding: 0; font-size: 14px;
+    line-height: 1; opacity: 0; /* إخفاؤها مبدئيًا */
+    transition: all 0.2s ease; z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: none; /* إزالة حدود bootstrap */
+}
+.preview-item:hover .btn {
+    opacity: 0.9; /* إظهارها عند مرور الماوس على العنصر الأب */
+}
+.preview-item .btn:hover {
+     opacity: 1; transform: scale(1.1);
+}
+
+/* زر المعاينة (العين) */
+.view-preview-btn {
+    /* وضعه في المنتصف */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5) !important; /* خلفية أغمق */
+    color: white !important;
+}
+
+/* زر الحذف */
+.remove-preview-btn {
+    top: 6px;
+    right: 6px;
+    /* يستخدم ألوان bootstrap الافتراضية (danger) */
+}
+
+/* (اختياري) تمييز الصور الموجودة */
+.existing-badge {
+    position: absolute; bottom: 5px; left: 5px; background-color: rgba(0, 0, 0, 0.7);
+    color: white; font-size: 10px; padding: 2px 5px; border-radius: 3px; z-index: 5;
+}

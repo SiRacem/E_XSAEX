@@ -1,0 +1,38 @@
+/* src/components/admin/ProductListAdmin.css */
+.product-list-admin .page-title {
+    color: #343a40;
+}
+
+.admin-product-table th {
+    font-weight: 600;
+    white-space: nowrap;
+    background-color: #f8f9fa;
+    /* خلفية خفيفة للهيدر */
+}
+
+.admin-product-table td {
+    vertical-align: middle;
+    /* محاذاة رأسية للمحتوى */
+}
+
+.table-product-image {
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action-cell {
+    white-space: nowrap;
+    /* منع الأزرار من الالتفاف */
+    min-width: 150px;
+    /* تحديد عرض أدنى لعمود الإجراءات */
+}
+
+.action-btn {
+    /* يمكنك إضافة أنماط للأزرار هنا */
+    padding: 0.3rem 0.6rem;
+}
+
+/* تحسين شكل المودال للرفض */
+#rejectReasonInput {
+    min-height: 100px;
+}

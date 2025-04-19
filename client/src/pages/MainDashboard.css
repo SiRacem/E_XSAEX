@@ -1,0 +1,66 @@
+.page-title { color: #343a40; }
+
+/* Info Boxes General */
+.info-box { min-height: 180px; }
+
+/* Balance Boxes */
+.balance-box { background-color: #c9302c; border-left: 5px solid #a94442; }
+.seller-box { background-color: #2a4160; border-left: 5px solid #1d2c41; }
+.balance-box .card-body, .seller-box .card-body { display: flex; flex-direction: column; } /* لـ mt-auto في اسم المستخدم */
+.balance-box h5, .seller-box h5 { margin-bottom: 0.5rem; } /* تقليل الهامش */
+.balance-box h3, .seller-box h4 { margin-bottom: 0.75rem; }
+
+/* --- *** تعديلات صندوق الإشعارات/الرسائل *** --- */
+.comms-box {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef; /* خط أفتح قليلاً */
+}
+/* جعل Card.Body يستخدم Flexbox لتوزيع الروابط */
+.comms-box .card-body {
+    display: flex !important; /* تأكيد Flex */
+    flex-direction: column !important;
+    justify-content: space-around !important; /* توزيع المسافة بالتساوي */
+    padding: 1rem 1.5rem; /* تعديل padding */
+}
+
+.comms-link {
+    color: #495057; /* لون أغمق قليلاً */
+    font-weight: 500;
+    font-size: 1.05rem; /* تكبير الخط قليلاً */
+    padding: 0.75rem 0; /* زيادة padding الرأسي */
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex; /* التأكيد على flex للعناصر الداخلية */
+    align-items: center;
+}
+.comms-link:hover {
+    color: #0d6efd; /* أزرق Bootstrap */
+    transform: translateX(3px); /* حركة بسيطة عند المرور */
+}
+.comms-link .icon {
+    opacity: 0.9;
+}
+.comms-link .link-text {
+    flex-grow: 1; /* جعل النص يأخذ المساحة المتبقية */
+}
+
+.notification-link-badge {
+    font-size: 0.7em; line-height: 1; padding: 0.3em 0.5em;
+    /* تعديل الموضع ليكون بجانب النص وليس الأيقونة */
+    position: static !important; /* إلغاء absolute */
+    transform: none !important; /* إلغاء transform */
+    margin-left: 8px; /* إضافة هامش لليسار */
+    vertical-align: middle; /* محاذاة رأسية أفضل */
+}
+/* --- *** نهاية تعديلات الصندوق *** --- */
+
+
+/* Bottom Row Cards */
+.card { border: none; border-radius: 0.5rem; }
+.card-header { border-bottom: 1px solid #f0f0f0; }
+.list-group-item { border: none; padding-top: 1rem; padding-bottom: 1rem; }
+.list-group-item svg { opacity: 0.7; }
+.logout-button-dashboard { background: none; border: none; width: 100%; text-align: left; cursor: pointer; padding-left: 1.25rem; /* ليتناسق مع الروابط */}
+.logout-button-dashboard:hover { background-color: rgba(220, 53, 69, 0.1); }
+
+/* Responsive adjustments (تبقى كما هي) */
+@media (max-width: 768px) { /* ... */ }
