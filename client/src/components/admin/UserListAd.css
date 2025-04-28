@@ -1,0 +1,30 @@
+/* src/components/admin/UserListAd.css */
+.user-list-admin .page-title { color: #343a40; }
+
+.admin-user-table th {
+    font-weight: 600; white-space: nowrap; background-color: #f8f9fa; font-size: 0.9rem;
+    vertical-align: middle; /* محاذاة رأسية للهيدر */
+}
+.admin-user-table td { vertical-align: middle; font-size: 0.9rem; }
+
+.table-user-image { /* تغيير اسم الكلاس */
+    object-fit: cover;
+    border: 1px solid #dee2e6; /* إضافة حد خفيف */
+}
+
+.action-cell-users { white-space: nowrap; min-width: 140px; /* زيادة العرض قليلاً */ }
+.action-btn { padding: 0.3rem 0.6rem; }
+.action-btn svg { vertical-align: middle; } /* محاذاة الأيقونة */
+
+/* تنسيق مودال التفاصيل */
+.modal-body .list-group-item { border: none; padding: 0.6rem 0; font-size: 0.95rem; display: flex; align-items: center; }
+.modal-body .list-group-item strong { margin-left: 8px; color: #343a40; }
+.modal-body .list-group-item svg { opacity: 0.7; min-width: 20px; text-align: center;}
+.modal-body h5 { font-weight: 600; color: #495057; }
+.modal-title .badge { font-size: 0.75rem; vertical-align: middle; }
+code.user-select-all { user-select: all; } /* السماح بتحديد الـ ID */
+
+
+/* تنسيق مودال التعديل */
+.modal-body hr { margin: 1.5rem 0;}
+.modal-body .text-muted { font-size: 0.9rem;}

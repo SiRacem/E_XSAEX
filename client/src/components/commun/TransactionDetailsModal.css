@@ -1,0 +1,60 @@
+/* src/components/commun/TransactionDetailsModal.css */
+/* Add this content to the file, or merge with your existing CSS */
+
+.modal-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Slightly larger icon background */
+    height: 35px;
+    border-radius: 50%;
+    background-color: #e9ecef; /* Light background */
+    margin-right: 0.75rem; /* Spacing */
+}
+
+.modal-icon-wrapper svg {
+    font-size: 1rem; /* Icon size */
+}
+
+/* Style list items in the modal */
+.modal-body .list-group-item {
+    background-color: transparent;
+    padding-top: 0.8rem;  /* Adjust vertical padding */
+    padding-bottom: 0.8rem;
+    padding-left: 0; /* Remove horizontal padding from ListGroup.Item */
+    padding-right: 0;
+    border-bottom: 1px solid #f1f1f1; /* Lighter border */
+}
+
+.modal-body .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.modal-body .text-muted.small {
+    font-size: 0.8rem; /* Smaller text for labels and IDs */
+    display: block; /* Ensure labels are block */
+    margin-bottom: 0.1rem;
+}
+
+.modal-body code.small {
+    background-color: #f8f9fa; /* Slight background for ID */
+    padding: 0.1em 0.4em;
+    border-radius: 0.2rem;
+    font-size: 0.75rem;
+}
+
+.profile-link {
+    color: #0d6efd; /* Standard link blue */
+}
+.profile-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Adjust spacing */
+.modal-body h5 {
+    margin-bottom: 1rem; /* More space below headings */
+    font-weight: 400; /* Lighter heading */
+    color: #6c757d; /* Muted heading color */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}

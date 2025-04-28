@@ -1,0 +1,67 @@
+/* src/components/layout/NotificationsPanel.css */
+.notifications-dropdown .dropdown-toggle::after {
+    display: none; /* إخفاء سهم dropdown الافتراضي */
+}
+
+.bell-icon {
+    color: #6c757d; /* لون أيقونة الجرس */
+    transition: color 0.2s ease;
+}
+.bell-icon:hover {
+    color: #343a40;
+}
+
+.notification-badge {
+    font-size: 0.65em;
+    padding: 0.25em 0.5em;
+}
+
+.notifications-menu {
+    padding: 0; /* إزالة padding الافتراضي للمنيو */
+    border: 1px solid #dee2e6;
+}
+.notifications-menu .dropdown-header {
+     background-color: #f8f9fa;
+     padding: 0.75rem 1rem;
+     border-bottom: 1px solid #dee2e6;
+     font-weight: 600;
+}
+
+.notification-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f0f0f0 !important; /* فصل بين الإشعارات */
+    text-decoration: none;
+    color: #212529;
+    display: block;
+    transition: background-color 0.15s ease-in-out;
+}
+.notification-item:last-child {
+     border-bottom: none !important;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.notification-item.unread {
+    background-color: #eef5fc; /* لون خفيف للإشعار غير المقروء */
+    font-weight: 500; /* جعل النص أثقل قليلاً */
+}
+.notification-item.unread .fw-bold {
+     color: #0d6efd; /* تمييز العنوان */
+}
+
+.notification-item .text-muted {
+    color: #6c757d !important;
+}
+.notification-item .extra-small {
+     font-size: 0.75em;
+}
+
+.view-all-link {
+     color: #0d6efd;
+     padding: 0.5rem 1rem;
+}
+.view-all-link:hover {
+     background-color: #f8f9fa;
+}

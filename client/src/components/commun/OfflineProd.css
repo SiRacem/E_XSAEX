@@ -1,0 +1,95 @@
+/* src/pages/OfflineProd.css */
+.offline-page {
+    background-color: #f8f9fa; /* الخلفية الرمادية الافتراضية للصفحة */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* --- Hero Section Styles --- */
+  .hero-section {
+    /* استخدم لونًا متدرجًا أو صورة خلفية */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* أو */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/path/to/your/background-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center center; */
+    color: #fff;
+    padding: 5rem 1rem; /* تعديل padding */
+    flex-shrink: 0; /* منع التقلص */
+  }
+  .hero-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 700 !important;
+  }
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+  
+  /* --- Products Section --- */
+  .products-section {
+    flex-grow: 1; /* جعل القسم يأخذ المساحة المتبقية */
+    background-color: transparent !important; /* [!] ضمان شفافية هذا القسم لإظهار خلفية الصفحة */
+  }
+  
+  /* --- Filter/Sort Row --- */
+  .filter-sort-row {
+    background-color: #ffffff; /* خلفية بيضاء للفلاتر */
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem !important; /* زيادة المسافة السفلية */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  .filter-select, .sort-select {
+    font-size: 0.9rem;
+    border-color: #ced4da;
+    box-shadow: none !important; /* إزالة الظل الافتراضي */
+    transition: border-color 0.2s ease;
+    cursor: pointer; /* تغيير المؤشر */
+  }
+  .filter-select:focus, .sort-select:focus {
+    border-color: #86b7fe;
+  }
+  .filter-sort-row .form-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0; /* إزالة الهامش السفلي للـ label */
+  }
+  
+  /* --- Product Grid Item --- */
+  .product-grid-item {
+    display: flex; /* مهم لـ align-items-stretch */
+  }
+  .product-grid-item .card { /* البطاقة تأخذ ارتفاع العنصر */
+      flex-grow: 1;
+  }
+  
+  /* Loading Placeholder */
+  .loading-placeholder {
+      min-height: 40vh; /* إعطاء ارتفاع لمؤشر التحميل */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* No Results Alert */
+  .no-results-alert {
+      /* يمكنك إضافة أنماط خاصة هنا إذا أردت */
+  }
+  
+  /* --- Responsive adjustments --- */
+  @media (max-width: 768px) {
+    .hero-section { padding: 4rem 1rem; }
+    .hero-title { font-size: 2.2rem; }
+    .filter-sort-row { padding: 1rem; }
+    .filter-sort-row > .col-md-6:last-child { margin-top: 0.75rem; justify-content: flex-start !important; } /* تغيير محاذاة الفرز في الجوال */
+  }
+  @media (max-width: 576px) {
+     .hero-section { padding: 3rem 1rem; }
+     .hero-title { font-size: 2rem; }
+     .hero-subtitle { font-size: 1rem; }
+     .filter-select, .sort-select { font-size: 0.85rem; }
+  }

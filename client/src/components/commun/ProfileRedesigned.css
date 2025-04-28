@@ -1,0 +1,99 @@
+.profile-card-main {
+    border: none;
+    border-radius: 0.75rem;
+    /* Slightly more rounded */
+    overflow: hidden;
+    /* Ensure header background doesn't bleed */
+}
+
+.profile-header {
+    border-bottom: 1px solid #dee2e6;
+    /* Standard Bootstrap border */
+}
+
+.profile-avatar {
+    border: 4px solid #ffffff;
+    /* White border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.profile-status {
+    font-size: 0.8rem;
+    padding: 0.3em 0.8em;
+    /* Adjust padding */
+}
+
+.section-title {
+    color: #495057;
+    font-weight: 500;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.balance-info-box {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    /* Equal height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.balance-info-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.balance-info-box .icon {
+    opacity: 0.8;
+}
+
+.balance-info-box .label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    /* Muted text */
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.balance-info-box .value {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Slight variation for seller boxes */
+.balance-info-box.seller {
+    background-color: #f8f9fa;
+    /* Slightly different background */
+    border-color: #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-header {
+        text-align: center;
+        /* Center header content on mobile */
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .balance-info-box .value {
+        font-size: 1.2rem;
+    }
+}

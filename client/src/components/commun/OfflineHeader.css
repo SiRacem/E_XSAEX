@@ -1,0 +1,39 @@
+/* src/components/commun/OfflineHeader.css */
+
+
+
+.main-header {
+    background-color: #ffffff !important;
+    /* تأكيد الخلفية البيضاء */
+    z-index: 1030;
+    border-radius: 15px;
+    /* تأكد أنه فوق المحتوى */
+}
+
+.header-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #333 !important;
+}
+
+.brand-text {
+    margin-left: 5px;
+}
+
+.main-header .nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-header .nav-link:hover {
+    color: #0d6efd !important;
+    /* لون Bootstrap الأساسي */
+}
+
+.main-header .btn {
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 15px;
+    padding: 8px;
+}

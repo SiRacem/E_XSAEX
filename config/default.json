@@ -1,0 +1,5 @@
+{
+    "secret" : "appAuth",
+    "PORT" : 8000,
+    "db" : "mongodb+srv://SiRacem:0000@onlinegroupdb.iqlvt.mongodb.net/SAEX?retryWrites=true&w=majority&appName=OnlineGroupDB"
+}

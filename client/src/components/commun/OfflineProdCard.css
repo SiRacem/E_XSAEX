@@ -1,0 +1,485 @@
+/* --- Card Base --- */
+.product-card-v3 {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Smooth transition */
+  cursor: default;
+  /* Default cursor for card, specific elements get pointer */
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  /* Lighter border */
+}
+
+.product-card-v3:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.08) !important;
+  border-color: #dee2e6;
+}
+
+/* --- Image Wrapper & Carousel --- */
+.product-img-wrapper {
+  height: 200px;
+  /* Slightly reduced height */
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+  /* Ensure content clipping */
+}
+
+.product-img-wrapper .carousel,
+.product-img-wrapper .carousel-inner,
+.product-img-wrapper .carousel-item.product-carousel-item {
+  height: 100%;
+}
+
+.product-img-wrapper .carousel-item img.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  /* Added filter transition */
+}
+
+.product-card-v3:hover .product-img {
+  transform: scale(1.04);
+  /* Slightly larger zoom */
+}
+
+/* Carousel Controls & Indicators (Subtle) */
+.product-img-wrapper .carousel-indicators {
+  margin-bottom: 0.4rem;
+  z-index: 3;
+}
+
+.product-img-wrapper .carousel-indicators button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin: 0 4px;
+}
+
+.product-img-wrapper .carousel-indicators .active {
+  background-color: #fff;
+}
+
+.product-img-wrapper .carousel-control-prev,
+.product-img-wrapper .carousel-control-next {
+  width: 12%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.product-card-v3:hover .carousel-control-prev,
+.product-card-v3:hover .carousel-control-next {
+  opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.8 !important;
+}
+
+.product-img-wrapper .carousel-control-prev-icon,
+.product-img-wrapper .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-size: 50% 50%;
+  width: 28px;
+  height: 28px;
+}
+
+/* View Gallery Button Overlay */
+.view-gallery-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  /* Above image, below controls/indicators */
+  opacity: 0;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  pointer-events: none;
+  /* Initially not clickable */
+}
+
+.view-gallery-btn svg {
+  margin-right: 5px;
+  vertical-align: -2px;
+}
+
+.product-card-v3:hover .view-gallery-btn {
+  opacity: 1;
+  pointer-events: auto;
+  /* Clickable on hover */
+}
+
+.product-card-v3:hover .product-img {
+  filter: brightness(0.8);
+  /* Darken image slightly on card hover */
+}
+
+.view-gallery-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  transform: translate(-50%, -50%) scale(1.05);
+  /* Add scale */
+}
+
+/* Stock Badge */
+.stock-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.65rem;
+  padding: 0.25em 0.5em;
+  background-color: rgba(33, 37, 41, 0.85) !important;
+  /* Darker badge */
+  z-index: 5;
+  border-radius: 4px;
+}
+
+/* --- Card Body --- */
+.product-card-v3 .card-body {
+  padding: 1rem;
+  /* Consistent padding */
+}
+
+.product-title {
+  font-weight: 600;
+  color: #212529;
+  line-height: 1.3;
+  font-size: 1rem;
+  /* Slightly larger title */
+  margin-bottom: 0.2rem !important;
+  /* Clamp lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.6em;
+  /* Reserve space */
+}
+
+.product-seller {
+  font-size: 0.75rem;
+  /* Smaller seller text */
+  color: #6c757d;
+  margin-bottom: 0.5rem !important;
+}
+
+.product-seller a {
+  color: #495057;
+  /* Darker link */
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.product-seller a:hover {
+  color: #0d6efd;
+}
+
+/* Price Section */
+.product-price-section {
+  line-height: 1.2;
+}
+
+.price-current {
+  font-size: 1.25rem;
+}
+
+/* Make current price stand out */
+.price-original {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.bid-badge {
+  font-size: 0.65rem;
+  vertical-align: middle;
+}
+
+/* --- Actions Row --- */
+.actions-row {
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f1f1;
+  /* Lighter separator */
+  margin-top: auto;
+  /* Push to bottom */
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.action-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.action-btn svg {
+  margin-right: 0.3rem;
+  vertical-align: -2px;
+}
+
+/* Like Button Specifics */
+.like-btn {
+  color: #6c757d;
+  padding: 0.2rem 0.4rem !important;
+  box-shadow: none !important;
+}
+
+.like-btn.liked {
+  color: #e44d64;
+}
+
+/* Pinkish red */
+.like-btn:not(:disabled):hover {
+  transform: scale(1.1);
+}
+
+.like-btn .spinner-border {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-width: 0.15em;
+  margin: 0;
+}
+
+.like-btn .action-count {
+  font-size: 0.75rem;
+  margin-left: 4px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Bidders Count */
+.action-btn .action-count {
+  font-size: 0.75rem;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+/* Bid Button */
+.bid-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.7rem;
+}
+
+.bid-btn:not(:disabled):hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: #fff;
+}
+
+/* Cart Button */
+.cart-btn {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.cart-btn svg {
+  margin-right: 0;
+}
+
+/* No margin for cart icon only */
+.cart-btn .spinner-border {
+  width: 1em;
+  height: 1em;
+}
+
+/* --- Bids Footer --- */
+.bids-footer {
+  font-size: 0.75rem;
+  /* Slightly smaller footer text */
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #eee;
+}
+
+.bids-list-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  /* Push avatars to the right */
+}
+
+.bid-item {
+  margin-left: -10px;
+  /* زيادة التداخل */
+  transition: transform 0.15s ease-in-out;
+  list-style: none;
+}
+
+.bid-item:hover {
+  transform: translateY(-2px);
+  z-index: 2;
+}
+
+.bidder-avatar {
+  width: 26px;
+  /* Slightly smaller avatars */
+  height: 26px;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  /* Or pointer if you add click action */
+  background-color: #0d6efd;
+  /* لون أزرق افتراضي */
+  color: white;
+  font-weight: bold;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  /* إضافة حركة بسيطة */
+}
+
+.bidder-avatar:hover {
+  transform: scale(1.1);
+  /* تكبير بسيط عند المرور */
+  z-index: 5;
+  /* جعله فوق الآخرين عند المرور */
+}
+
+.bidder-avatar svg {
+  font-size: 0.9rem;
+}
+
+/* Adjust icon size */
+.more-bids {
+  font-size: 0.7rem;
+  align-self: center;
+  margin-left: 2px !important;
+  color: #6c757d;
+}
+
+/* --- Lightbox Modal --- */
+/* (الأنماط السابقة للـ Lightbox يمكن الإبقاء عليها أو تعديلها حسب الرغبة) */
+.lightbox-modal .modal-dialog {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+}
+
+.lightbox-modal .modal-content {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.lightbox-modal .modal-body {
+  background-color: rgba(10, 10, 10, 0.9);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.lightbox-image {
+  max-height: calc(90vh - 40px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.close-lightbox-btn {
+  border-radius: 50% !important;
+  width: 35px;
+  height: 35px;
+  line-height: 1;
+  font-size: 1.6rem;
+  padding: 0;
+  opacity: 0.7;
+  z-index: 1060;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.close-lightbox-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.lightbox-modal .carousel-control-prev,
+.lightbox-modal .carousel-control-next {
+  width: 8%;
+  opacity: 0.6;
+}
+
+.lightbox-modal .carousel-control-prev-icon,
+.lightbox-modal .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.lightbox-modal .carousel-indicators button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+}
+
+.lightbox-modal .carousel-indicators .active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* --- Bid Modal --- */
+/* (أنماط مودال المزايدة يمكن الإبقاء عليها) */
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .product-img-wrapper {
+    height: 180px;
+  }
+
+  .product-title {
+    font-size: 0.9rem;
+  }
+
+  .price-current {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-img-wrapper {
+    height: 160px;
+  }
+
+  .actions-row {
+    flex-wrap: wrap;
+    justify-content: space-around !important;
+  }
+
+  .actions-row>* {
+    margin-bottom: 8px !important;
+  }
+
+  /* Add bottom margin when wrapped */
+  .bid-btn {
+    min-width: 70px;
+  }
+
+  .cart-btn {
+    min-width: auto;
+  }
+}
